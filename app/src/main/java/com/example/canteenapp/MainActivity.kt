@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val spKelas = findViewById<Spinner>(R.id.spinnerKelas)
         val btnMasuk = findViewById<Button>(R.id.btnLogin)
 
-        val kelas = arrayOf("2AEC1", "2AEC2", "2AEC3", "2AEC3")
+        val kelas = arrayOf("Pilih kelas", "2AEC1", "2AEC2", "2AEC3", "2AEC4")
         spKelas.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, kelas)
 
         btnMasuk.setOnClickListener {

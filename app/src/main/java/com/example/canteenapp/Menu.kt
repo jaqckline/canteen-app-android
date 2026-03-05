@@ -14,13 +14,45 @@ class Menu : AppCompatActivity() {
 
         val nama = intent.getStringExtra("nama")
         val nim = intent.getStringExtra("nim")
+        val kelas = intent.getStringExtra("kelas")
 
         findViewById<Button>(R.id.btnNasiGoreng).setOnClickListener {
             val intent = Intent(this, DetailPesanan::class.java)
             intent.putExtra("nama", nama)
             intent.putExtra("nim", nim)
-            intent.putExtra("menu", "Nasi Goreng")
+            intent.putExtra("kelas", kelas)
+            intent.putExtra("pesanan", "Nasi Goreng")
             intent.putExtra("harga", 15000)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnMieAyam).setOnClickListener {
+            val intent = Intent(this, DetailPesanan::class.java)
+            intent.putExtra("nama", nama)
+            intent.putExtra("nim", nim)
+            intent.putExtra("kelas", kelas)
+            intent.putExtra("pesanan", "Mie Ayam")
+            intent.putExtra("harga", 12000)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnAyamGeprek).setOnClickListener {
+            val intent = Intent(this, DetailPesanan::class.java)
+            intent.putExtra("nama", nama)
+            intent.putExtra("nim", nim)
+            intent.putExtra("kelas", kelas)
+            intent.putExtra("pesanan", "Ayam Geprek")
+            intent.putExtra("harga", 18000)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnBakso).setOnClickListener {
+            val intent = Intent(this, DetailPesanan::class.java)
+            intent.putExtra("nama", nama)
+            intent.putExtra("nim", nim)
+            intent.putExtra("kelas", kelas)
+            intent.putExtra("pesanan", "Bakso")
+            intent.putExtra("harga", 10000)
             startActivity(intent)
         }
     }

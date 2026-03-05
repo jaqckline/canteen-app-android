@@ -39,13 +39,6 @@
                 android:layout_margin="8dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Nama Mahasiswa" />
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -54,7 +47,7 @@
                         android:id="@+id/inputNama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Masukan nama anda" />
+                        android:hint="Nama Mahasiswa" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -63,13 +56,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="NIM" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -79,22 +65,25 @@
                         android:id="@+id/inputNim"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Masukan NIM anda" />
+                        android:hint=" Nomor Induk Mahasiswa (NIM)" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:orientation="vertical">
+                android:gravity="center|start"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="31dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Kelas" />
+                    android:gravity="center|start"
+                    android:text="Kelas"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <Spinner
                     android:id="@+id/spinnerKelas"

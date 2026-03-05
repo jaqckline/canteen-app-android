@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import java.text.NumberFormat
+import java.util.Locale
 
 class DetailPesanan : AppCompatActivity() {
 
@@ -12,25 +14,37 @@ class DetailPesanan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_pesanan)
 
-        // Ambil data dari intent
+        val nama = intent.getStringExtra("nama")
+        val nim = intent.getStringExtra("nim")
+        val kelas = intent.getStringExtra("kelas")
+        val pesanan = intent.getStringExtra("pesanan")
         val harga = intent.getIntExtra("harga", 0)
 
-        // Ambil komponen dari XML (sesuai ID baru)
+        val textNama = findViewById<EditText>(R.id.textNama)
+        val textNim = findViewById<EditText>(R.id.textNim)
+        val textKelas = findViewById<EditText>(R.id.textKelas)
+        val textPesanan = findViewById<EditText>(R.id.textPesanan)
+
+        textNama.setText(nama)
+        textNim.setText(nim)
+        textKelas.setText(kelas)
+        textPesanan.setText(pesanan)
+
         val inputQty = findViewById<TextInputEditText>(R.id.inputQty)
         val textTotal = findViewById<EditText>(R.id.textTotal)
         val btnTotal = findViewById<Button>(R.id.btnLogin)
 
         btnTotal.setOnClickListener {
-
             val qtyString = inputQty.text.toString()
 
             if (qtyString.isNotEmpty()) {
                 val qty = qtyString.toInt()
-                val total = harga * qty
+                val formatRupiah = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
 
-                textTotal.setText("Rp $total")
+                val total = formatRupiah.format(harga * qty)
+                textTotal.setText(total)
             } else {
-                textTotal.setText("Isi jumlah dulu")
+                textTotal.setText("Mohon isi kuantitas (Qty)")
             }
         }
     }
